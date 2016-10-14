@@ -7,19 +7,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         /**
+         * No.1
          * 继承方法
          * $.test();
          */
         $.extend({
-            test:function(){alert('test函数')}
+            test:function(){alert('test函数')},
+            ccc:'bbb'
         })
         /**
+         * No.2
          * 三种初始化方法
          */
         $(document).ready(function(){
             console.log("aaaaa");
-            alert("第一种方法。");
-            $.test();
+//            alert("第一种方法。");
+//            $.test();//No.1
+//            alert($.ccc);//No.1
+
+            /**
+             * No.3
+             * 单击事件绑定
+             * $(this) 获取自身控件
+             * */
+            $(".xxx").bind("click",function(){
+                alert($(this).id);
+            });
         });
 
         //        $(function(){
@@ -29,9 +42,16 @@
         //        jQuery(function($) {
         //            alert("第三种方法。");
         //        });
+
+        /**
+         * 页面加载完执行
+         * */
+//        window.onload = function() {
+//            setfoot();
+//        }
     </script>
 </head>
 <body>
-
+<p class="xxx" id="xxx">aaaa</p>
 </body>
 </html>
